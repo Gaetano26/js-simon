@@ -12,7 +12,6 @@ let numeriScelti = document.querySelectorAll ('input');
 form.addEventListener('submit', invia );
 
 
-
 //funzione per generare numeri interi random
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); 
@@ -28,12 +27,12 @@ function generaNumeri (min, max) {
     return numeriPc;
 }
 
-//genero i numeri e li stampo nell'html
+
 let numeriPc = generaNumeri(1, 50);
 numeriRandom.innerText = `${numeriPc}`;
 
 
-setTimeout(cancella, 3000);
+setTimeout(cancella, 2000);
 
 function cancella () {
     numeriRandom.innerHTML = '<H4>Inserisci i numeri che ricordi nelle caselle sotto</h4>' ;
@@ -42,6 +41,19 @@ function cancella () {
 
 function invia (e) {
     e.preventDefault ();
-    let numeroGiocatore = parseInt(numeriScelti.value);
+    const risultato = document.getElementById ('risultato')
+    let indovinati = 0 ;
+    for (i = 0; i <numeriScelti.length; i++) {
+        let numeroGiocatore = parseInt(numeriScelti[i].value);
+           
+                if (numeroGiocatore === numeriPc[i]) {
+                indovinati++
+                risultato.innerText = `<p>Il tuo punteggio è : ${indovinati}</p>`
+                
+            }
+    }
     
+    
+     
+
 }

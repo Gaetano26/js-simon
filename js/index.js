@@ -6,9 +6,9 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 
 let numeriRandom = document.getElementById('numeri-random');
-
+let btn = document.querySelector('button')
 const form = document.querySelector('form');
-let numeriScelti = document.getElementById ('numero');
+let numeriScelti = document.querySelectorAll ('input');
 form.addEventListener('submit', invia );
 
 
@@ -42,7 +42,6 @@ function cancella () {
 
 function invia (e) {
     e.preventDefault ();
-    let input = document.getElementById ('numero');
-    let numeroGiocatore = input.value;
+    let numeroGiocatore = parseInt(numeriScelti.value);
+    
 }
-console.log (numeroGiocatore);

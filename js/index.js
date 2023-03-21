@@ -41,19 +41,21 @@ function cancella () {
 
 function invia (e) {
     e.preventDefault ();
-    const risultato = document.getElementById ('risultato')
-    let indovinati = 0 ;
+    let paragrafo = document.querySelector ('p')
+    let indovinati = 0;
+    let numeriIndovinati;
     for (i = 0; i <numeriScelti.length; i++) {
         let numeroGiocatore = parseInt(numeriScelti[i].value);
            
                 if (numeroGiocatore === numeriPc[i]) {
-                indovinati++
-                risultato.innerText = `<p>Il tuo punteggio è : ${indovinati}</p>`
-                
+                indovinati++;              
+                paragrafo.innerText = `Il tuo punteggio è : ${indovinati}`
+                 
             }
-    }
+           
+    } 
     
-    
+   
      
 
 }
